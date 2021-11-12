@@ -67,10 +67,10 @@ public class AirportTest {
                 planesSortedByMaxLoadCapacity.get(1).getMaxLoadCapacity());
 
         Assert.assertTrue(planesSortedByMaxLoadCapacity.get(1).getMaxLoadCapacity() <=
-                planesSortedByMaxLoadCapacity.get(planesSortedByMaxLoadCapacity.size()-2).getMaxLoadCapacity());
+                planesSortedByMaxLoadCapacity.get(planesSortedByMaxLoadCapacity.size() - 2).getMaxLoadCapacity());
 
-        Assert.assertTrue(planesSortedByMaxLoadCapacity.get(planesSortedByMaxLoadCapacity.size()-2).getMaxLoadCapacity() <=
-                planesSortedByMaxLoadCapacity.get(planesSortedByMaxLoadCapacity.size()-1).getMaxLoadCapacity());
+        Assert.assertTrue(planesSortedByMaxLoadCapacity.get(planesSortedByMaxLoadCapacity.size() - 2).getMaxLoadCapacity() <=
+                planesSortedByMaxLoadCapacity.get(planesSortedByMaxLoadCapacity.size() - 1).getMaxLoadCapacity());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class AirportTest {
     }
 
     @Test
-    public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified(){
+    public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified() {
         Airport airport = new Airport(planes);
         Assert.assertEquals(experimentalPlanes, airport.getExperimentalPlanes());
     }

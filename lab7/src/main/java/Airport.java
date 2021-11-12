@@ -14,10 +14,14 @@ import java.util.stream.Collectors;
 public class Airport {
     private List<? extends Plane> planes;
 
+    public Airport(List<? extends Plane> planes) {
+        this.planes = planes;
+    }
+
     public List<PassengerPlane> getPassengerPlanes() {
         return planes.stream()
-                .filter(p -> p instanceof PassengerPlane)
-                .map(p -> (PassengerPlane) p)
+                .filter(plane -> plane instanceof PassengerPlane)
+                .map(plane -> (PassengerPlane) plane)
                 .collect(Collectors.toList());
     }
 
@@ -65,7 +69,6 @@ public class Airport {
 
     public void sortByMaxLoadCapacity() {
         planes.sort(Comparator.comparingInt(Plane::getMaxLoadCapacity));
-        //return this;
     }
 
     public List<? extends Plane> getPlanes() {
@@ -81,9 +84,5 @@ public class Airport {
         return "Airport{" +
                 "Planes=" + planes.toString() +
                 '}';
-    }
-
-    public Airport(List<? extends Plane> planes) {
-        this.planes = planes;
     }
 }
