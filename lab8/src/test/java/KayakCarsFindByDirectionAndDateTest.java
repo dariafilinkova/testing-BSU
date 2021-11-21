@@ -23,7 +23,7 @@ public class KayakCarsFindByDirectionAndDateTest {
         KayakCarsPage page = new KayakCarsPage(driver);
         page.openPage();
         Thread.sleep(2000);
-        page.openListOfDirection(); //Instead of direction place
+        page.openListOfDirection();
         Thread.sleep(2000);
         page.inputDirection("Lisbon, Portugal");
         page.clickOnCountryAndCity();
@@ -32,9 +32,6 @@ public class KayakCarsFindByDirectionAndDateTest {
         ResultPage resultPage = new ResultPage(driver);
         resultPage.openResultPage();
 
-       Assert.assertEquals(page.getCurrentUrl(), resultPage.getCurrentUrl());
-
+        Assert.assertEquals(page.getCurrentUrl(), resultPage.getCurrentUrl());
     }
-
-
 }
